@@ -6,7 +6,7 @@
   <link href="http://jiashun-ye.github.io/atom.xml" rel="self"/>
   
   <link href="http://jiashun-ye.github.io/"/>
-  <updated>2025-03-07T03:51:13.785Z</updated>
+  <updated>2025-03-07T06:53:00.562Z</updated>
   <id>http://jiashun-ye.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://jiashun-ye.github.io/2025/03/07/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AD%A6%E4%B9%A0/"/>
     <id>http://jiashun-ye.github.io/2025/03/07/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AD%A6%E4%B9%A0/</id>
     <published>2025-03-07T02:59:00.000Z</published>
-    <updated>2025-03-07T03:51:13.785Z</updated>
+    <updated>2025-03-07T06:53:00.562Z</updated>
     
     <content type="html"><![CDATA[<p>贝叶斯学习（BayesianLearning）是一种基于贝叶斯定理的统计方法，用于从数据中学习和推断。它为我们提供了一种量化不确定性并进行推理的框架。贝叶斯学习的核心思想是更新我们的信念（即概率分布）基于新的证据。</p><span id="more"></span><h2 id="贝叶斯定理">贝叶斯定理</h2><p>贝叶斯定理是贝叶斯学习的基础，它描述了如何通过已知的证据更新先验概率。其形式为：</p><p><span class="math display">\[P(\theta | D) = \frac{P(D | \theta) P(\theta)}{P(D)}\]</span></p><p>其中： - ( P(| D) ) 是后验概率（posterior probability），表示在数据 (D ) 下参数 ( ) 的概率分布。 - ( P(D | ) )是似然函数（likelihood），表示在给定参数 ( ) 下，数据 ( D ) 的概率。 - (P() ) 是先验概率（prior probability），表示在没有观察到数据之前，参数 () 的概率分布。 - ( P(D) )是证据（evidence），它是一个常数，用于确保后验概率的归一化。</p><h2 id="贝叶斯推断">贝叶斯推断</h2><p>贝叶斯推断的目标是根据观察到的数据 ( D )，通过计算后验概率 ( P(| D) )来推断未知的参数 ()。这种推断方法允许我们在推理过程中考虑参数的不确定性。</p><h3 id="后验分布">后验分布</h3><p>贝叶斯推断的关键是计算后验分布。后验分布 ( P(| D) ) 是我们对参数 ( )的新的信念，基于我们对数据 ( D )的观察。为了计算后验分布，首先需要选择一个合适的先验分布 ( P())，然后结合数据通过似然函数 ( P(D | ) ) 更新先验。</p><h3 id="计算后验分布">计算后验分布</h3><p>计算后验分布时，首先需要知道似然函数 ( P(D | ) ) 和先验分布 ( P())。然后，通过贝叶斯定理：</p><p><span class="math display">\[P(\theta | D) = \frac{P(D | \theta) P(\theta)}{P(D)}\]</span></p><p>注意，证据 ( P(D) ) 是一个常数，它通常不依赖于参数 ()，因此在计算时可以忽略它。</p><h3 id="数值积分">数值积分</h3><p>在许多实际问题中，后验分布 ( P(| D) )的计算可能并不是简单的解析求解。通常我们需要使用数值方法（如蒙特卡洛方法）来近似后验分布。这些方法可以通过反复采样和计算，逐渐逼近真实的后验分布。</p><h2 id="贝叶斯学习的优势">贝叶斯学习的优势</h2><ol type="1"><li><strong>处理不确定性</strong>：贝叶斯方法能够自然地处理不确定性，它通过概率分布表示了模型参数的不确定性。</li><li><strong>先验信息的整合</strong>：贝叶斯方法可以将先验信息与观察数据结合，特别适用于数据不足或噪声较大的情况。</li><li><strong>灵活性</strong>：贝叶斯方法在各种类型的问题中都具有广泛的应用，包括分类、回归、预测等。</li></ol><h2 id="贝叶斯线性回归">贝叶斯线性回归</h2><p>贝叶斯学习的一个典型应用是贝叶斯线性回归。在贝叶斯线性回归中，我们假设数据的生成过程为：</p><p><span class="math display">\[y = \mathbf{w}^T \mathbf{x} + \epsilon\]</span></p><p>其中： - ( y ) 是观测值， - ( ) 是输入特征向量， - ( )是回归系数（即模型参数）， - ( (0, ^2) ) 是噪声。</p><p>贝叶斯线性回归的目标是计算参数 ( ) 的后验分布，即：</p><p><span class="math display">\[P(\mathbf{w} | \mathbf{X}, \mathbf{y}) = \frac{P(\mathbf{y} |\mathbf{X}, \mathbf{w}) P(\mathbf{w})}{P(\mathbf{y} | \mathbf{X})}\]</span></p><p>其中： - ( P( | , ) ) 是给定回归系数 ( ) 和特征 ( )后的观测数据的似然函数。 - ( P() )是回归系数的先验分布，通常我们可以假设它符合正态分布 ( (0, ^{-1}I))，其中 ( ) 是超参数，控制正则化项。 - ( P( | ) )是证据，它通常很难计算，因此我们会在计算后验分布时忽略它。</p><h3 id="计算后验分布-1">计算后验分布</h3><p>通过贝叶斯定理，我们可以将回归系数 ( ) 的后验分布表示为：</p><p><span class="math display">\[P(\mathbf{w} | \mathbf{X}, \mathbf{y}) = \frac{P(\mathbf{y} |\mathbf{X}, \mathbf{w}) P(\mathbf{w})}{\int P(\mathbf{y} | \mathbf{X},\mathbf{w}) P(\mathbf{w}) d\mathbf{w}}\]</span></p><h3 id="贝叶斯预测">贝叶斯预测</h3><p>一旦我们得到了后验分布 ( P( | , ))，我们可以使用它来进行预测。给定新的输入数据 ( <em>* )，预测输出 (y</em>* ) 的分布为：</p><p><span class="math display">\[P(y_* | \mathbf{x}_*, \mathbf{X}, \mathbf{y}) = \int P(y_* |\mathbf{x}_*, \mathbf{w}) P(\mathbf{w} | \mathbf{X}, \mathbf{y})d\mathbf{w}\]</span></p><p>这个积分通常需要通过数值方法来估计，例如蒙特卡洛方法。</p><h3 id="贝叶斯线性回归的优点">贝叶斯线性回归的优点</h3><p>贝叶斯线性回归相比于经典的线性回归方法，具有以下优点： -<strong>不确定性量化</strong>：贝叶斯方法不仅能够给出回归系数的估计值，还能够提供估计的不确定性（即后验分布）。-<strong>正则化</strong>：贝叶斯方法通过先验分布自动进行正则化，避免了过拟合。-<strong>小样本情况</strong>：当样本量较小或噪声较大时，贝叶斯方法能够充分利用先验信息，获得更稳定的结果。</p><h2 id="结论">结论</h2><p>贝叶斯学习提供了一个强大的框架来处理具有不确定性的机器学习问题。通过贝叶斯推断，我们可以在观察数据后更新我们对参数的信念，并利用这些信息进行预测。贝叶斯方法的一个主要优势是它能够有效地结合先验信息，并且在不确定性较高的情况下仍然表现出较好的性能。</p><p>贝叶斯学习广泛应用于统计推断、机器学习、信号处理等领域，尤其在面对小样本数据和不确定性时，其优势尤为明显。</p>]]></content>
     
@@ -31,8 +31,14 @@ Learning）是一种基于贝叶斯定理的统计方法，用于从数据中学
     
     
     
+    <category term="机器学习" scheme="http://jiashun-ye.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="杂谈" scheme="http://jiashun-ye.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="贝叶斯学习" scheme="http://jiashun-ye.github.io/tags/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="机器学习" scheme="http://jiashun-ye.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="概率论" scheme="http://jiashun-ye.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
     
   </entry>
   
