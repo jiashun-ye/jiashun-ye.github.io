@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://jiashun-ye.github.io/2025/03/07/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</loc>
+    <loc>http://jiashun-ye.github.io/2025/03/07/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AD%A6%E4%B9%A0/</loc>
     
     <lastmod>2025-03-07</lastmod>
     
@@ -11,9 +11,9 @@
   </url>
   
   <url>
-    <loc>http://jiashun-ye.github.io/2025/03/06/hello-world/</loc>
+    <loc>http://jiashun-ye.github.io/2025/03/07/%E6%A0%87%E7%AD%BE%E5%88%86%E5%B8%83%E5%AD%A6%E4%B9%A0/</loc>
     
-    <lastmod>2025-03-06</lastmod>
+    <lastmod>2025-03-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -30,6 +30,13 @@
   
   <url>
     <loc>http://jiashun-ye.github.io/tags/LDL/</loc>
+    <lastmod>2025-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://jiashun-ye.github.io/tags/%E6%9D%82%E8%B0%88/</loc>
     <lastmod>2025-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

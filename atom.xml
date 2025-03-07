@@ -1,63 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>JS.Ye’s Research Hub</title>
   
-  
+  <subtitle>开源研究代码、技术报告及论文预印本。</subtitle>
   <link href="http://jiashun-ye.github.io/atom.xml" rel="self"/>
   
   <link href="http://jiashun-ye.github.io/"/>
-  <updated>2025-03-07T01:12:00.678Z</updated>
+  <updated>2025-03-07T03:51:13.785Z</updated>
   <id>http://jiashun-ye.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Jiashun Ye</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>测试文章</title>
-    <link href="http://jiashun-ye.github.io/2025/03/07/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
-    <id>http://jiashun-ye.github.io/2025/03/07/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</id>
+    <title>贝叶斯学习</title>
+    <link href="http://jiashun-ye.github.io/2025/03/07/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://jiashun-ye.github.io/2025/03/07/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AD%A6%E4%B9%A0/</id>
+    <published>2025-03-07T02:59:00.000Z</published>
+    <updated>2025-03-07T03:51:13.785Z</updated>
+    
+    <content type="html"><![CDATA[<p>贝叶斯学习（BayesianLearning）是一种基于贝叶斯定理的统计方法，用于从数据中学习和推断。它为我们提供了一种量化不确定性并进行推理的框架。贝叶斯学习的核心思想是更新我们的信念（即概率分布）基于新的证据。</p><span id="more"></span><h2 id="贝叶斯定理">贝叶斯定理</h2><p>贝叶斯定理是贝叶斯学习的基础，它描述了如何通过已知的证据更新先验概率。其形式为：</p><p><span class="math display">\[P(\theta | D) = \frac{P(D | \theta) P(\theta)}{P(D)}\]</span></p><p>其中： - ( P(| D) ) 是后验概率（posterior probability），表示在数据 (D ) 下参数 ( ) 的概率分布。 - ( P(D | ) )是似然函数（likelihood），表示在给定参数 ( ) 下，数据 ( D ) 的概率。 - (P() ) 是先验概率（prior probability），表示在没有观察到数据之前，参数 () 的概率分布。 - ( P(D) )是证据（evidence），它是一个常数，用于确保后验概率的归一化。</p><h2 id="贝叶斯推断">贝叶斯推断</h2><p>贝叶斯推断的目标是根据观察到的数据 ( D )，通过计算后验概率 ( P(| D) )来推断未知的参数 ()。这种推断方法允许我们在推理过程中考虑参数的不确定性。</p><h3 id="后验分布">后验分布</h3><p>贝叶斯推断的关键是计算后验分布。后验分布 ( P(| D) ) 是我们对参数 ( )的新的信念，基于我们对数据 ( D )的观察。为了计算后验分布，首先需要选择一个合适的先验分布 ( P())，然后结合数据通过似然函数 ( P(D | ) ) 更新先验。</p><h3 id="计算后验分布">计算后验分布</h3><p>计算后验分布时，首先需要知道似然函数 ( P(D | ) ) 和先验分布 ( P())。然后，通过贝叶斯定理：</p><p><span class="math display">\[P(\theta | D) = \frac{P(D | \theta) P(\theta)}{P(D)}\]</span></p><p>注意，证据 ( P(D) ) 是一个常数，它通常不依赖于参数 ()，因此在计算时可以忽略它。</p><h3 id="数值积分">数值积分</h3><p>在许多实际问题中，后验分布 ( P(| D) )的计算可能并不是简单的解析求解。通常我们需要使用数值方法（如蒙特卡洛方法）来近似后验分布。这些方法可以通过反复采样和计算，逐渐逼近真实的后验分布。</p><h2 id="贝叶斯学习的优势">贝叶斯学习的优势</h2><ol type="1"><li><strong>处理不确定性</strong>：贝叶斯方法能够自然地处理不确定性，它通过概率分布表示了模型参数的不确定性。</li><li><strong>先验信息的整合</strong>：贝叶斯方法可以将先验信息与观察数据结合，特别适用于数据不足或噪声较大的情况。</li><li><strong>灵活性</strong>：贝叶斯方法在各种类型的问题中都具有广泛的应用，包括分类、回归、预测等。</li></ol><h2 id="贝叶斯线性回归">贝叶斯线性回归</h2><p>贝叶斯学习的一个典型应用是贝叶斯线性回归。在贝叶斯线性回归中，我们假设数据的生成过程为：</p><p><span class="math display">\[y = \mathbf{w}^T \mathbf{x} + \epsilon\]</span></p><p>其中： - ( y ) 是观测值， - ( ) 是输入特征向量， - ( )是回归系数（即模型参数）， - ( (0, ^2) ) 是噪声。</p><p>贝叶斯线性回归的目标是计算参数 ( ) 的后验分布，即：</p><p><span class="math display">\[P(\mathbf{w} | \mathbf{X}, \mathbf{y}) = \frac{P(\mathbf{y} |\mathbf{X}, \mathbf{w}) P(\mathbf{w})}{P(\mathbf{y} | \mathbf{X})}\]</span></p><p>其中： - ( P( | , ) ) 是给定回归系数 ( ) 和特征 ( )后的观测数据的似然函数。 - ( P() )是回归系数的先验分布，通常我们可以假设它符合正态分布 ( (0, ^{-1}I))，其中 ( ) 是超参数，控制正则化项。 - ( P( | ) )是证据，它通常很难计算，因此我们会在计算后验分布时忽略它。</p><h3 id="计算后验分布-1">计算后验分布</h3><p>通过贝叶斯定理，我们可以将回归系数 ( ) 的后验分布表示为：</p><p><span class="math display">\[P(\mathbf{w} | \mathbf{X}, \mathbf{y}) = \frac{P(\mathbf{y} |\mathbf{X}, \mathbf{w}) P(\mathbf{w})}{\int P(\mathbf{y} | \mathbf{X},\mathbf{w}) P(\mathbf{w}) d\mathbf{w}}\]</span></p><h3 id="贝叶斯预测">贝叶斯预测</h3><p>一旦我们得到了后验分布 ( P( | , ))，我们可以使用它来进行预测。给定新的输入数据 ( <em>* )，预测输出 (y</em>* ) 的分布为：</p><p><span class="math display">\[P(y_* | \mathbf{x}_*, \mathbf{X}, \mathbf{y}) = \int P(y_* |\mathbf{x}_*, \mathbf{w}) P(\mathbf{w} | \mathbf{X}, \mathbf{y})d\mathbf{w}\]</span></p><p>这个积分通常需要通过数值方法来估计，例如蒙特卡洛方法。</p><h3 id="贝叶斯线性回归的优点">贝叶斯线性回归的优点</h3><p>贝叶斯线性回归相比于经典的线性回归方法，具有以下优点： -<strong>不确定性量化</strong>：贝叶斯方法不仅能够给出回归系数的估计值，还能够提供估计的不确定性（即后验分布）。-<strong>正则化</strong>：贝叶斯方法通过先验分布自动进行正则化，避免了过拟合。-<strong>小样本情况</strong>：当样本量较小或噪声较大时，贝叶斯方法能够充分利用先验信息，获得更稳定的结果。</p><h2 id="结论">结论</h2><p>贝叶斯学习提供了一个强大的框架来处理具有不确定性的机器学习问题。通过贝叶斯推断，我们可以在观察数据后更新我们对参数的信念，并利用这些信息进行预测。贝叶斯方法的一个主要优势是它能够有效地结合先验信息，并且在不确定性较高的情况下仍然表现出较好的性能。</p><p>贝叶斯学习广泛应用于统计推断、机器学习、信号处理等领域，尤其在面对小样本数据和不确定性时，其优势尤为明显。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;贝叶斯学习（Bayesian
+Learning）是一种基于贝叶斯定理的统计方法，用于从数据中学习和推断。它为我们提供了一种量化不确定性并进行推理的框架。贝叶斯学习的核心思想是更新我们的信念（即概率分布）基于新的证据。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="杂谈" scheme="http://jiashun-ye.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>标签分布学习</title>
+    <link href="http://jiashun-ye.github.io/2025/03/07/%E6%A0%87%E7%AD%BE%E5%88%86%E5%B8%83%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://jiashun-ye.github.io/2025/03/07/%E6%A0%87%E7%AD%BE%E5%88%86%E5%B8%83%E5%AD%A6%E4%B9%A0/</id>
     <published>2025-03-07T01:08:50.000Z</published>
-    <updated>2025-03-07T01:12:00.678Z</updated>
+    <updated>2025-03-07T03:51:04.937Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="标签分布学习概述">标签分布学习概述</h1><p>标签分布学习（Label Distribution Learning,LDL）是一种新兴的监督学习范式，旨在对实例的标签进行更细致的建模。与传统的单标签（single-label）或多标签（multi-label）学习方法不同，标签分布学习并不只是简单地为每个实例分配一个或多个标签，而是学习一个多维的标签分布，反映每个标签在描述实例时的重要性或相关程度。</p><h2 id="数学公式定义">1. 数学公式定义</h2><p>设 <span class="math inline">\(X\)</span> 为输入空间，且 <spanclass="math inline">\(Y = \{y_1, y_2, \ldots, y_k\}\)</span>是标签空间，其中 <span class="math inline">\(k\)</span>是标签的数量。标签分布学习的核心在于为每一个输入实例 <spanclass="math inline">\(x \in X\)</span> 学习一个标签分布 <spanclass="math inline">\(P(y|x)\)</span>，它是一个概率分布，表示给定实例<span class="math inline">\(x\)</span> 的情况下，各个标签 <spanclass="math inline">\(y_i\)</span> 的概率。此概率分布满足以下条件：</p><p><span class="math display">\[\sum_{i=1}^{k} P(y_i | x) = 1 \quad \text{且} \quad P(y_i | x) \geq 0,\; \forall i=1,\ldots,k\]</span></p><p>其中 <span class="math inline">\(P(y_i | x)\)</span> 表示标签 <spanclass="math inline">\(y_i\)</span> 在实例 <spanclass="math inline">\(x\)</span> 中的概率。</p><h2 id="适用场景">2. 适用场景</h2><p>标签分布学习尤其适用于那些标签之间存在模糊性和重叠性的任务，例如情感分析、图像识别和医学诊断。通过建模标签的概率分布，LDL可以捕捉到一个实例对应的多个标签之间的关系，从而提高模型的表达能力和预测精度。</p><h2 id="学习过程">3. 学习过程</h2><p>在标签分布学习中，模型的学习目标是通过最小化预测分布 <spanclass="math inline">\(\hat{P}(y|x)\)</span> 与真实标签分布 <spanclass="math inline">\(P(y|x)\)</span>之间的差异来进行训练。常用的损失函数包括 Kullback-Leibler 散度（KLDivergence）：</p><p><span class="math display">\[L(\hat{P}, P) = \sum_{i=1}^{k} P(y_i | x) \log\left(\frac{P(y_i |x)}{\hat{P}(y_i | x)}\right)\]</span></p><p>选择合适的模型（如深度学习或传统的机器学习模型）以及优化算法，能够有效地学习到输入与标签分布之间的复杂关系。</p><h2 id="优势与挑战">4. 优势与挑战</h2><p>标签分布学习的优势在于能够提供更丰富的信息表达，因而在处理含有重叠标签的任务时能够获得比传统方法更好的性能。例如，在情感分析中，一个评论可能同时受到“积极”、“中立”和“消极”三种情感标签的影响，而LDL则可以利用这些信息进行更正确的分类。然而，挑战在于需要足够的数据来准确地估计标签的真实分布，尤其是在标签稀疏或数据量不足的情况下，模型的性能可能受到影响。</p><h2 id="未来的发展方向">5. 未来的发展方向</h2><p>随着深度学习技术的发展，标签分布学习的研究也在不断推进。未来的研究方向可能集中在提高模型的可解释性、进而理解标签分布背后的潜在机制，以及提升模型在标签动态变化情况下的适应能力。</p><h3 id="参考文献">参考文献</h3><ul><li><a href="https://zhuanlan.zhihu.com/p/647499177">Ldl标签分布学习(1)- 知乎</a></li><li><a href="https://zhuanlan.zhihu.com/p/340340047">标签增强技术（LabelEnhancement） - 知乎</a></li><li><a href="https://www.jianshu.com/p/0f5098818861">Label DistributionLearning - 简书</a></li><li><ahref="https://bbs.huaweicloud.com/blogs/324363">基于深度学习的标签分布学习介绍-云社区-华为云</a></li><li><ahref="https://blog.csdn.net/qq_38299788/article/details/124497466">图像情感分析标签分布学习_labeldistribution learning-CSDN博客</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<p>标签分布学习（Label Distribution Learning,LDL）是一种新兴的监督学习范式，旨在对实例的标签进行更细致的建模。与传统的单标签（single-label）或多标签（multi-label）学习方法不同，标签分布学习并不只是简单地为每个实例分配一个或多个标签，而是学习一个多维的标签分布，反映每个标签在描述实例时的重要性或相关程度。</p><span id="more"></span><h2 id="数学公式定义">1. 数学公式定义</h2><p>设 <span class="math inline">\(X\)</span> 为输入空间，且 <spanclass="math inline">\(Y = \{y_1, y_2, \ldots, y_k\}\)</span>是标签空间，其中 <span class="math inline">\(k\)</span>是标签的数量。标签分布学习的核心在于为每一个输入实例 <spanclass="math inline">\(x \in X\)</span> 学习一个标签分布 <spanclass="math inline">\(P(y|x)\)</span>，它是一个概率分布，表示给定实例<span class="math inline">\(x\)</span> 的情况下，各个标签 <spanclass="math inline">\(y_i\)</span> 的概率。此概率分布满足以下条件：</p><p><span class="math display">\[\sum_{i=1}^{k} P(y_i | x) = 1 \quad \text{且} \quad P(y_i | x) \geq 0,\; \forall i=1,\ldots,k\]</span></p><p>其中 <span class="math inline">\(P(y_i | x)\)</span> 表示标签 <spanclass="math inline">\(y_i\)</span> 在实例 <spanclass="math inline">\(x\)</span> 中的概率。</p><h2 id="适用场景">2. 适用场景</h2><p>标签分布学习尤其适用于那些标签之间存在模糊性和重叠性的任务，例如情感分析、图像识别和医学诊断。通过建模标签的概率分布，LDL可以捕捉到一个实例对应的多个标签之间的关系，从而提高模型的表达能力和预测精度。</p><h2 id="学习过程">3. 学习过程</h2><p>在标签分布学习中，模型的学习目标是通过最小化预测分布 <spanclass="math inline">\(\hat{P}(y|x)\)</span> 与真实标签分布 <spanclass="math inline">\(P(y|x)\)</span>之间的差异来进行训练。常用的损失函数包括 Kullback-Leibler 散度（KLDivergence）：</p><p><span class="math display">\[L(\hat{P}, P) = \sum_{i=1}^{k} P(y_i | x) \log\left(\frac{P(y_i |x)}{\hat{P}(y_i | x)}\right)\]</span></p><p>选择合适的模型（如深度学习或传统的机器学习模型）以及优化算法，能够有效地学习到输入与标签分布之间的复杂关系。</p><h2 id="优势与挑战">4. 优势与挑战</h2><p>标签分布学习的优势在于能够提供更丰富的信息表达，因而在处理含有重叠标签的任务时能够获得比传统方法更好的性能。例如，在情感分析中，一个评论可能同时受到“积极”、“中立”和“消极”三种情感标签的影响，而LDL则可以利用这些信息进行更正确的分类。然而，挑战在于需要足够的数据来准确地估计标签的真实分布，尤其是在标签稀疏或数据量不足的情况下，模型的性能可能受到影响。</p><h2 id="未来的发展方向">5. 未来的发展方向</h2><p>随着深度学习技术的发展，标签分布学习的研究也在不断推进。未来的研究方向可能集中在提高模型的可解释性、进而理解标签分布背后的潜在机制，以及提升模型在标签动态变化情况下的适应能力。</p><h3 id="参考文献">参考文献</h3><ul><li><a href="https://zhuanlan.zhihu.com/p/647499177">Ldl标签分布学习(1)- 知乎</a></li><li><a href="https://zhuanlan.zhihu.com/p/340340047">标签增强技术（LabelEnhancement） - 知乎</a></li><li><a href="https://www.jianshu.com/p/0f5098818861">Label DistributionLearning - 简书</a></li><li><ahref="https://bbs.huaweicloud.com/blogs/324363">基于深度学习的标签分布学习介绍-云社区-华为云</a></li><li><ahref="https://blog.csdn.net/qq_38299788/article/details/124497466">图像情感分析标签分布学习_labeldistribution learning-CSDN博客</a></li></ul>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h1 id=&quot;标签分布学习概述&quot;&gt;标签分布学习概述&lt;/h1&gt;
-&lt;p&gt;标签分布学习（Label Distribution Learning,
-LDL）是一种新兴的监督学习范式，旨在对实例的标签进行更细致的建模。与传统的单标签（single-label）或多标签（multi-l</summary>
-      
+    <summary type="html">&lt;p&gt;标签分布学习（Label Distribution Learning,
+LDL）是一种新兴的监督学习范式，旨在对实例的标签进行更细致的建模。与传统的单标签（single-label）或多标签（multi-label）学习方法不同，标签分布学习并不只是简单地为每个实例分配一个或多个标签，而是学习一个多维的标签分布，反映每个标签在描述实例时的重要性或相关程度。&lt;/p&gt;</summary>
     
     
     
     
     <category term="LDL" scheme="http://jiashun-ye.github.io/tags/LDL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://jiashun-ye.github.io/2025/03/06/hello-world/"/>
-    <id>http://jiashun-ye.github.io/2025/03/06/hello-world/</id>
-    <published>2025-03-06T11:37:46.037Z</published>
-    <updated>2025-03-06T11:26:07.633Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your veryfirst post. Check <a href="https://hexo.io/docs/">documentation</a> formore info. If you get any problems when using Hexo, you can find theanswer in <ahref="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> oryou can ask me on <ahref="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="quick-start">Quick Start</h2><h3 id="create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very
-first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; fo</summary>
-      
-    
-    
-    
     
   </entry>
   
