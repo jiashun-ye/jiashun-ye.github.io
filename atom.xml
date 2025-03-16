@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>JS.Ye’s Research Hub</title>
   
-  <subtitle>开源研究代码、技术报告及论文预印本。</subtitle>
+  <subtitle>记录论文精读与拓展、课程学习笔记及研究项目全过程</subtitle>
   <link href="http://jiashun-ye.github.io/atom.xml" rel="self"/>
   
   <link href="http://jiashun-ye.github.io/"/>
